@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: douglas-venes
+  namespace: douglas-venes
+  labels:
+    app: douglas-venes
+spec:
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+       app: douglas-venes
+  replicas: 10
+  template:
+    metadata:
+      labels:
+        app: douglas-venes
+    spec:
+      containers:
+      - image: douglasvenes/douglas-venes
+        name: nginx-douglas

@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: douglas-venes
+  namespace: douglas-venes
+
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: douglas-venes.stag.jac.bsb.br
+    http:
+      paths:
+      - backend:
+          service:
+            name: douglas-venes
+            port:
+              number: 80
+        path: /
+        pathType: Prefix

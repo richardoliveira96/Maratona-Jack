@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: douglas-venes
+  namespace: douglas-venes
+spec:
+  selector:
+     app: douglas-venes
+  ports:
+  - port: 80
+    targetPort: 80
